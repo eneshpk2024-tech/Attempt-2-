@@ -1,24 +1,24 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>For Dhikshika ❤️</title>
 <style>
 *{box-sizing:border-box}
 body{
   margin:0;
   font-family: 'Segoe UI', Roboto, sans-serif;
-  background:#ff7eb3;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
   color:#fff;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
 .screen{
+  min-height:100vh;
   max-width:420px;
-  width:100%;
+  margin:auto;
   padding:24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   text-align:center;
 }
 .hidden{display:none}
@@ -34,29 +34,8 @@ button{
 }
 .yes{background:#fff;color:#ff4f7b}
 .no{background:rgba(255,255,255,0.3);color:#fff}
-.long{min-height:140vh;display:flex;flex-direction:column;justify-content:space-between}
-.black{
-  background:#000;
-  color:#fff;
-  width:100vw;
-  height:100vh;
-  position:fixed;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-}
-.ribbon{
-  position:absolute;
-  top:20px;
-  right:20px;
-  font-size:3rem;
-  transform:rotate(-20deg);
-}
-.fade{opacity:0;transition:opacity 1.5s}
-.show{opacity:1}
-</style>
+.long{min-height:160vh;justify-content:space-between}/* Final black screen */ .black{ background:#000; color:#fff; min-height:100vh; display:flex; align-items:center; justify-content:center; flex-direction:column; position:relative; } .ribbon{ position:absolute; top:20px; right:20px; font-size:3rem; transform:rotate(-25deg); } .fade{opacity:0;transition:opacity 1.5s} .show{opacity:1} </style>
+
 </head>
 <body><!-- Screen 1 --><div id="s1" class="screen">
   <h1>Are u Dhikshu? 😌</h1>
@@ -81,31 +60,31 @@ button{
     <button class="no" onclick="reject()">Cha venna</button>
     <p id="scrollText" class="hidden">Aprm yen madam Evalo neram scroll panniga 😏</p>
   </div>
-</div><!-- Screen 4 --><div id="s4" class="black hidden">
+</div><!-- Screen 4 --><div id="s4" class="screen black hidden">
   <div class="ribbon">🎀</div>
   <h1 id="angelText" class="fade">How does my Angel look like? 😇</h1>
 </div><script>
 function goYes(){
-  document.getElementById('s1').classList.add('hidden');
-  document.getElementById('s2').classList.remove('hidden');
+  s1.classList.add('hidden');
+  s2.classList.remove('hidden');
   setTimeout(()=>{
-    document.getElementById('s2').classList.add('hidden');
-    document.getElementById('s3').classList.remove('hidden');
+    s2.classList.add('hidden');
+    s3.classList.remove('hidden');
   },2500);
 }
 function goNo(){
-  document.getElementById('tease').classList.remove('hidden');
+  tease.classList.remove('hidden');
   setTimeout(goYes,2000);
 }
 function accept(){
-  document.getElementById('s3').classList.add('hidden');
-  document.getElementById('s4').classList.remove('hidden');
+  s3.classList.add('hidden');
+  s4.classList.remove('hidden');
   setTimeout(()=>{
-    document.getElementById('angelText').classList.add('show');
+    angelText.classList.add('show');
   },60000);
 }
 function reject(){
-  document.getElementById('scrollText').classList.remove('hidden');
+  scrollText.classList.remove('hidden');
   setTimeout(accept,2000);
 }
 </script></body>
